@@ -1,0 +1,2 @@
+# Azure Ansible CentOS VM
+
