@@ -183,7 +183,7 @@
         "typeHandlerVersion": "1.4",
         "autoUpgradeMinorVersion": true,
         "settings": {
-          "fileUris": [ "" ],
+          "fileUris": [ "https://raw.githubusercontent.com/russmckendrick/azure-ansible-centos/master/install_ansible.sh" ],
           "commandToExecute": "sh install_ansible.sh"
         }
       },
