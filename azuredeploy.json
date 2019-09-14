@@ -168,17 +168,17 @@
           "computerName": "[parameters('virtualMachineName')]",
           "adminUsername": "[parameters('adminUsername')]",
           "linuxConfiguration": {
-                  "disablePasswordAuthentication": true,
-                  "ssh": {
-                      "publicKeys": [
-                          {
-                              "path": "[concat('/home/', parameters('adminUsername'), '/.ssh/authorized_keys')]",
-                              "keyData": "[parameters('adminPublicKey')]"
-                          }
-                      ]
-                  }
+              "disablePasswordAuthentication": true,
+              "ssh": {
+                  "publicKeys": [
+                      {
+                          "path": "[concat('/home/', parameters('adminUsername'), '/.ssh/authorized_keys')]",
+                          "keyData": "[parameters('adminPublicKey')]"
+                      }
+                  ]
               }
-          },
+            }
+          }
         }
       },
       "tags": {}
