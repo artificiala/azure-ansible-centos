@@ -12,6 +12,9 @@
     "virtualMachineName": {
       "type": "string"
     },
+    "siteLocation": {
+      "type": "string"
+    },
     "virtualMachineSize": {
       "type": "string",
       "defaultValue": "Standard_B1ms",
@@ -47,7 +50,7 @@
       "name": "[variables('networkInterfaceName')]",
       "type": "Microsoft.Network/networkInterfaces",
       "apiVersion": "2018-04-01",
-      "location": "[parameters('location')]",
+      "location": "[parameters('siteLocation')]",
       "dependsOn": [
         "[concat('Microsoft.Network/networkSecurityGroups/', variables('networkSecurityGroupName'))]",
         "[concat('Microsoft.Network/virtualNetworks/', variables('virtualNetworkName'))]",
@@ -78,7 +81,7 @@
       "name": "[variables('networkSecurityGroupName')]",
       "type": "Microsoft.Network/networkSecurityGroups",
       "apiVersion": "2018-08-01",
-      "location": "[parameters('location')]",
+      "location": "[parameters('siteLocation')]",
       "properties": {
         "securityRules": [
           {
@@ -102,7 +105,7 @@
       "name": "[variables('virtualNetworkName')]",
       "type": "Microsoft.Network/virtualNetworks",
       "apiVersion": "2018-08-01",
-      "location": "[parameters('location')]",
+      "location": "[parameters('siteLocation')]",
       "properties": {
         "addressSpace": {
           "addressPrefixes": [ "10.0.0.0/24" ]
@@ -122,7 +125,7 @@
       "name": "[variables('publicIpAddressName')]",
       "type": "Microsoft.Network/publicIpAddresses",
       "apiVersion": "2018-08-01",
-      "location": "[parameters('location')]",
+      "location": "[parameters('siteLocation')]",
       "properties": {
         "publicIpAllocationMethod": "[variables('publicIpAddressType')]"
       },
@@ -135,7 +138,7 @@
       "name": "[parameters('virtualMachineName')]",
       "type": "Microsoft.Compute/virtualMachines",
       "apiVersion": "2018-06-01",
-      "location": "[parameters('location')]",
+      "location": "[parameters('siteLocation')]",
       "dependsOn": [
         "[concat('Microsoft.Network/networkInterfaces/', variables('networkInterfaceName'))]"
       ],
@@ -185,7 +188,7 @@
     {
       "name": "[concat(parameters('virtualMachineName'),'/CustomScriptForLinux')]",
       "type": "Microsoft.Compute/virtualMachines/extensions",
-      "location": "[parameters('location')]",
+      "location": "[parameters('siteLocation')]",
       "apiVersion": "2015-06-15",
       "properties": {
         "publisher": "Microsoft.OSTCExtensions",
