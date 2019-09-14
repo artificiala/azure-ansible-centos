@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ## Update and install packages
-sudo yum -y update
+sudo yum -y update --exclude=WALinuxAgent
 sudo yum -y install epel-release
 sudo yum -y install python2-pip
 
