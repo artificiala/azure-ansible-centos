@@ -1,7 +1,5 @@
 # Azure Ansible CentOS VM
 
-<a href="https://azuredeploy.net/
-   repository=https://github.com/russmckendrick/azure-ansible-centos"
-   target="_blank">
+<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Frussmckendrick%2Fazure-ansible-centos%2Fmaster%2Fazuredeploy.json" alt="Deploy to Azure" target="_blank">
    <img src="http://azuredeploy.net/deploybutton.png"/>
 </a>
